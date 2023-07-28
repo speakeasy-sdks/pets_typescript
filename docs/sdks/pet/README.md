@@ -27,10 +27,13 @@ Add a new pet to the store
 
 ```typescript
 import { PetStore } from "PetStore";
-import { AddPetJsonResponse } from "PetStore/dist/sdk/models/operations";
+import { AddPetJsonResponse, AddPetJsonSecurity } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 const sdk = new PetStore();
+const operationSecurity: AddPetJsonSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.addPetJson({
   category: {
@@ -56,9 +59,7 @@ sdk.pet.addPetJson({
       name: "Luke McCullough",
     },
   ],
-}, {
-  petstoreAuth: "",
-}).then((res: AddPetJsonResponse) => {
+}, operationSecurity).then((res: AddPetJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -87,14 +88,15 @@ Add a new pet to the store
 
 ```typescript
 import { PetStore } from "PetStore";
-import { AddPetRawResponse } from "PetStore/dist/sdk/models/operations";
+import { AddPetRawResponse, AddPetRawSecurity } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 const sdk = new PetStore();
-
-sdk.pet.addPetRaw("hic".encode(), {
+const operationSecurity: AddPetRawSecurity = {
   petstoreAuth: "",
-}).then((res: AddPetRawResponse) => {
+};
+
+sdk.pet.addPetRaw("hic".encode(), operationSecurity).then((res: AddPetRawResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -123,16 +125,17 @@ Deletes a pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { DeletePetResponse } from "PetStore/dist/sdk/models/operations";
+import { DeletePetResponse, DeletePetSecurity } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new PetStore();
+const operationSecurity: DeletePetSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.deletePet({
   apiKey: "optio",
   petId: 521848,
-}, {
-  petstoreAuth: "",
-}).then((res: DeletePetResponse) => {
+}, operationSecurity).then((res: DeletePetResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -161,17 +164,18 @@ Multiple status values can be provided with comma separated strings
 
 ```typescript
 import { PetStore } from "PetStore";
-import { FindPetsByStatusResponse, FindPetsByStatusStatus } from "PetStore/dist/sdk/models/operations";
+import { FindPetsByStatusResponse, FindPetsByStatusSecurity, FindPetsByStatusStatus } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new PetStore();
+const operationSecurity: FindPetsByStatusSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.findPetsByStatus({
   status: [
     FindPetsByStatusStatus.Pending,
   ],
-}, {
-  petstoreAuth: "",
-}).then((res: FindPetsByStatusResponse) => {
+}, operationSecurity).then((res: FindPetsByStatusResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -202,18 +206,19 @@ Muliple tags can be provided with comma separated strings. Use\ \ tag1, tag2, ta
 
 ```typescript
 import { PetStore } from "PetStore";
-import { FindPetsByTagsResponse } from "PetStore/dist/sdk/models/operations";
+import { FindPetsByTagsResponse, FindPetsByTagsSecurity } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new PetStore();
+const operationSecurity: FindPetsByTagsSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.findPetsByTags({
   tags: [
     "modi",
     "qui",
   ],
-}, {
-  petstoreAuth: "",
-}).then((res: FindPetsByTagsResponse) => {
+}, operationSecurity).then((res: FindPetsByTagsResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -242,15 +247,16 @@ Returns a single pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { GetPetByIdResponse } from "PetStore/dist/sdk/models/operations";
+import { GetPetByIdResponse, GetPetByIdSecurity } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new PetStore();
+const operationSecurity: GetPetByIdSecurity = {
+  apiKey: "",
+};
 
 sdk.pet.getPetById({
   petId: 774234,
-}, {
-  apiKey: "",
-}).then((res: GetPetByIdResponse) => {
+}, operationSecurity).then((res: GetPetByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -279,9 +285,12 @@ Updates a pet in the store with form data
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UpdatePetWithFormResponse } from "PetStore/dist/sdk/models/operations";
+import { UpdatePetWithFormResponse, UpdatePetWithFormSecurity } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new PetStore();
+const operationSecurity: UpdatePetWithFormSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.updatePetWithForm({
   petId: 736918,
@@ -289,9 +298,7 @@ sdk.pet.updatePetWithForm({
     name: "Edna Mante II",
     status: "natus",
   },
-}, {
-  petstoreAuth: "",
-}).then((res: UpdatePetWithFormResponse) => {
+}, operationSecurity).then((res: UpdatePetWithFormResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -320,10 +327,13 @@ Update an existing pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UpdatePetJsonResponse } from "PetStore/dist/sdk/models/operations";
+import { UpdatePetJsonResponse, UpdatePetJsonSecurity } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 const sdk = new PetStore();
+const operationSecurity: UpdatePetJsonSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.updatePetJson({
   category: {
@@ -356,9 +366,7 @@ sdk.pet.updatePetJson({
       name: "Darrin Brakus",
     },
   ],
-}, {
-  petstoreAuth: "",
-}).then((res: UpdatePetJsonResponse) => {
+}, operationSecurity).then((res: UpdatePetJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -387,14 +395,15 @@ Update an existing pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UpdatePetRawResponse } from "PetStore/dist/sdk/models/operations";
+import { UpdatePetRawResponse, UpdatePetRawSecurity } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 const sdk = new PetStore();
-
-sdk.pet.updatePetRaw("culpa".encode(), {
+const operationSecurity: UpdatePetRawSecurity = {
   petstoreAuth: "",
-}).then((res: UpdatePetRawResponse) => {
+};
+
+sdk.pet.updatePetRaw("culpa".encode(), operationSecurity).then((res: UpdatePetRawResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -423,16 +432,17 @@ uploads an image
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UploadFileResponse } from "PetStore/dist/sdk/models/operations";
+import { UploadFileResponse, UploadFileSecurity } from "PetStore/dist/sdk/models/operations";
 
 const sdk = new PetStore();
+const operationSecurity: UploadFileSecurity = {
+  petstoreAuth: "",
+};
 
 sdk.pet.uploadFile({
   requestBody: "consequuntur".encode(),
   petId: 995300,
-}, {
-  petstoreAuth: "",
-}).then((res: UploadFileResponse) => {
+}, operationSecurity).then((res: UploadFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
