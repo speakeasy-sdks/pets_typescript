@@ -338,7 +338,7 @@ export class Pet {
      * @remarks
      * Muliple tags can be provided with comma separated strings. Use\ \ tag1, tag2, tag3 for testing.
      *
-     * @deprecated this method will be removed in a future release, please migrate away from it as soon as possible
+     * @deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
      */
     async findPetsByTags(
         req: operations.FindPetsByTagsRequest,

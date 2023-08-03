@@ -200,7 +200,7 @@ sdk.pet.findPetsByStatus({
 
 Muliple tags can be provided with comma separated strings. Use\ \ tag1, tag2, tag3 for testing.
 
-> :warning: **DEPRECATED**: this method will be removed in a future release, please migrate away from it as soon as possible.
+> :warning: **DEPRECATED**: This will be removed in a future release, please migrate away from it as soon as possible.
 
 ### Example Usage
 
