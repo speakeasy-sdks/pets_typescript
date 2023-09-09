@@ -1,7 +1,5 @@
 # Order
 
-order placed for purchasing the pet
-
 
 ## Fields
 

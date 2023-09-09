@@ -1,7 +1,5 @@
 # Pet
 
-Pet object that needs to be added to the store
-
 
 ## Fields
 

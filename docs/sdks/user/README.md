@@ -30,14 +30,14 @@ import { CreateUserResponse } from "PetStore/dist/sdk/models/operations";
 const sdk = new PetStore();
 
 sdk.user.createUser({
-  email: "Eugene_Brown31@gmail.com",
-  firstName: "Britney",
-  id: 778346,
-  lastName: "Dietrich",
-  password: "tenetur",
-  phone: "(780) 268-6099 x845",
-  userStatus: 976762,
-  username: "Ana_Moen",
+  email: "Leora.Fadel@gmail.com",
+  firstName: "Tyra",
+  id: 902599,
+  lastName: "Parker",
+  password: "in",
+  phone: "(649) 700-9666 x123",
+  userStatus: 128926,
+  username: "Nestor.Halvorson",
 }).then((res: CreateUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -72,14 +72,14 @@ const sdk = new PetStore();
 
 sdk.user.createUsersWithArrayInput([
   {
-    email: "Iliana.Grady35@gmail.com",
-    firstName: "Elena",
-    id: 480894,
-    lastName: "Carter",
-    password: "harum",
-    phone: "(949) 226-5582 x559",
-    userStatus: 93940,
-    username: "Thelma92",
+    email: "Keyon_Batz@gmail.com",
+    firstName: "Yasmeen",
+    id: 958950,
+    lastName: "Brakus",
+    password: "mollitia",
+    phone: "719.752.4442",
+    userStatus: 623510,
+    username: "Carmelo67",
   },
 ]).then((res: CreateUsersWithArrayInputResponse) => {
   if (res.statusCode == 200) {
@@ -115,24 +115,14 @@ const sdk = new PetStore();
 
 sdk.user.createUsersWithListInput([
   {
-    email: "Adele.Orn64@gmail.com",
-    firstName: "Michelle",
-    id: 841386,
-    lastName: "Green",
-    password: "modi",
-    phone: "1-555-218-3016",
-    userStatus: 569618,
-    username: "Dominique.Prosacco96",
-  },
-  {
-    email: "Delores.Roob@yahoo.com",
-    firstName: "Laron",
-    id: 896039,
-    lastName: "Marquardt",
-    password: "officia",
-    phone: "996.548.9612",
-    userStatus: 767024,
-    username: "Raquel_Jenkins",
+    email: "Emilia.Conn94@yahoo.com",
+    firstName: "Freida",
+    id: 662527,
+    lastName: "Schuster",
+    password: "aut",
+    phone: "(686) 299-8459",
+    userStatus: 55714,
+    username: "Lelah.Klein3",
   },
 ]).then((res: CreateUsersWithListInputResponse) => {
   if (res.statusCode == 200) {
@@ -167,7 +157,7 @@ import { DeleteUserResponse } from "PetStore/dist/sdk/models/operations";
 const sdk = new PetStore();
 
 sdk.user.deleteUser({
-  username: "Shaniya.Friesen",
+  username: "Iliana.Grady35",
 }).then((res: DeleteUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -201,7 +191,7 @@ import { GetUserByNameResponse } from "PetStore/dist/sdk/models/operations";
 const sdk = new PetStore();
 
 sdk.user.getUserByName({
-  username: "Shannon_Wintheiser72",
+  username: "Elena68",
 }).then((res: GetUserByNameResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -235,8 +225,8 @@ import { LoginUserResponse } from "PetStore/dist/sdk/models/operations";
 const sdk = new PetStore();
 
 sdk.user.loginUser({
-  password: "id",
-  username: "Jewell.Lesch64",
+  password: "enim",
+  username: "Shania.Jerde21",
 }).then((res: LoginUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -302,16 +292,16 @@ const sdk = new PetStore();
 
 sdk.user.updateUser({
   user: {
-    email: "Henry.Mosciski@yahoo.com",
-    firstName: "Aileen",
-    id: 470132,
-    lastName: "Gutkowski",
-    password: "distinctio",
-    phone: "1-423-674-8112 x0535",
-    userStatus: 551816,
-    username: "Kiley_Bartoletti",
+    email: "Kennedi.Mante50@hotmail.com",
+    firstName: "Judah",
+    id: 916723,
+    lastName: "Botsford",
+    password: "repudiandae",
+    phone: "(292) 406-8167 x8221",
+    userStatus: 397821,
+    username: "Kyler16",
   },
-  username: "Mack.Hammes",
+  username: "Rhoda14",
 }).then((res: UpdateUserResponse) => {
   if (res.statusCode == 200) {
     // handle response

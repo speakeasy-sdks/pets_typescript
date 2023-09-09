@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Created user object
- */
 export class User extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "email" })

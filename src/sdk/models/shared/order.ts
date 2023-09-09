@@ -14,9 +14,6 @@ export enum OrderStatus {
     Delivered = "delivered",
 }
 
-/**
- * order placed for purchasing the pet
- */
 export class Order extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "complete" })

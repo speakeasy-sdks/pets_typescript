@@ -19,20 +19,13 @@ sdk.pet.addPetJson({
   id: 544883,
   name: "doggie",
   photoUrls: [
-    "vel",
-    "error",
-    "deserunt",
-    "suscipit",
+    "illum",
   ],
   status: PetStatus.Pending,
   tags: [
     {
-      id: 891773,
-      name: "Lucia Goldner",
-    },
-    {
-      id: 791725,
-      name: "Ken Kshlerin",
+      id: 623564,
+      name: "Rick Kertzmann",
     },
   ],
 }, operationSecurity).then((res: AddPetJsonResponse) => {

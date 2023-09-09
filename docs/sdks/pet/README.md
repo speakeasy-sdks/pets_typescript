@@ -37,26 +37,19 @@ const operationSecurity: AddPetJsonSecurity = {
 
 sdk.pet.addPetJson({
   category: {
-    id: 925597,
-    name: "Miss Raymond Hauck III",
+    id: 56713,
+    name: "Ricky Hoppe",
   },
-  id: 832620,
+  id: 812169,
   name: "doggie",
   photoUrls: [
-    "quo",
-    "odit",
-    "at",
-    "at",
+    "voluptatum",
   ],
-  status: PetStatus.Sold,
+  status: PetStatus.Pending,
   tags: [
     {
-      id: 799159,
-      name: "Erik Lebsack",
-    },
-    {
-      id: 118274,
-      name: "Luke McCullough",
+      id: 568045,
+      name: "Mrs. Sophie Smith MD",
     },
   ],
 }, operationSecurity).then((res: AddPetJsonResponse) => {
@@ -96,7 +89,7 @@ const operationSecurity: AddPetRawSecurity = {
   petstoreAuth: "",
 };
 
-sdk.pet.addPetRaw("hic".encode(), operationSecurity).then((res: AddPetRawResponse) => {
+sdk.pet.addPetRaw("perferendis".encode(), operationSecurity).then((res: AddPetRawResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -133,8 +126,8 @@ const operationSecurity: DeletePetSecurity = {
 };
 
 sdk.pet.deletePet({
-  apiKey: "optio",
-  petId: 521848,
+  apiKey: "ipsam",
+  petId: 832620,
 }, operationSecurity).then((res: DeletePetResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -173,7 +166,7 @@ const operationSecurity: FindPetsByStatusSecurity = {
 
 sdk.pet.findPetsByStatus({
   status: [
-    FindPetsByStatusStatus.Pending,
+    FindPetsByStatusStatus.Sold,
   ],
 }, operationSecurity).then((res: FindPetsByStatusResponse) => {
   if (res.statusCode == 200) {
@@ -215,8 +208,7 @@ const operationSecurity: FindPetsByTagsSecurity = {
 
 sdk.pet.findPetsByTags({
   tags: [
-    "modi",
-    "qui",
+    "quo",
   ],
 }, operationSecurity).then((res: FindPetsByTagsResponse) => {
   if (res.statusCode == 200) {
@@ -255,7 +247,7 @@ const operationSecurity: GetPetByIdSecurity = {
 };
 
 sdk.pet.getPetById({
-  petId: 774234,
+  petId: 140350,
 }, operationSecurity).then((res: GetPetByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -293,10 +285,10 @@ const operationSecurity: UpdatePetWithFormSecurity = {
 };
 
 sdk.pet.updatePetWithForm({
-  petId: 736918,
+  petId: 870013,
   petPetIdBody: {
-    name: "Edna Mante II",
-    status: "natus",
+    name: "Emilio Krajcik",
+    status: "esse",
   },
 }, operationSecurity).then((res: UpdatePetWithFormResponse) => {
   if (res.statusCode == 200) {
@@ -337,33 +329,19 @@ const operationSecurity: UpdatePetJsonSecurity = {
 
 sdk.pet.updatePetJson({
   category: {
-    id: 149675,
-    name: "Curtis Morissette",
+    id: 520478,
+    name: "Omar Carroll",
   },
-  id: 902599,
+  id: 582020,
   name: "doggie",
   photoUrls: [
-    "in",
-    "corporis",
-    "iste",
+    "fugit",
   ],
   status: PetStatus.Pending,
   tags: [
     {
-      id: 697631,
-      name: "Brenda Wisozk",
-    },
-    {
-      id: 670638,
-      name: "Connie Herzog",
-    },
-    {
-      id: 315428,
-      name: "Corey Hane III",
-    },
-    {
-      id: 634274,
-      name: "Darrin Brakus",
+      id: 944669,
+      name: "Everett Breitenberg",
     },
   ],
 }, operationSecurity).then((res: UpdatePetJsonResponse) => {
@@ -403,7 +381,7 @@ const operationSecurity: UpdatePetRawSecurity = {
   petstoreAuth: "",
 };
 
-sdk.pet.updatePetRaw("culpa".encode(), operationSecurity).then((res: UpdatePetRawResponse) => {
+sdk.pet.updatePetRaw("modi".encode(), operationSecurity).then((res: UpdatePetRawResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -440,8 +418,8 @@ const operationSecurity: UploadFileSecurity = {
 };
 
 sdk.pet.uploadFile({
-  requestBody: "consequuntur".encode(),
-  petId: 995300,
+  requestBody: "qui".encode(),
+  petId: 774234,
 }, operationSecurity).then((res: UploadFileResponse) => {
   if (res.statusCode == 200) {
     // handle response

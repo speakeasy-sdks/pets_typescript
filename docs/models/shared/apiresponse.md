@@ -1,7 +1,5 @@
 # ApiResponse
 
-successful operation
-
 
 ## Fields
 
