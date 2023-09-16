@@ -59,7 +59,7 @@ sdk.pet.addPetJson({
 ## Available Resources and Operations
 
 
-### [pet](docs/sdks/pet/README.md)
+### [Pet](docs/sdks/pet/README.md)
 
 * [addPetJson](docs/sdks/pet/README.md#addpetjson) - Add a new pet to the store
 * [addPetRaw](docs/sdks/pet/README.md#addpetraw) - Add a new pet to the store
@@ -72,14 +72,14 @@ sdk.pet.addPetJson({
 * [updatePetRaw](docs/sdks/pet/README.md#updatepetraw) - Update an existing pet
 * [uploadFile](docs/sdks/pet/README.md#uploadfile) - uploads an image
 
-### [store](docs/sdks/store/README.md)
+### [Store](docs/sdks/store/README.md)
 
 * [deleteOrder](docs/sdks/store/README.md#deleteorder) - Delete purchase order by ID
 * [getInventory](docs/sdks/store/README.md#getinventory) - Returns pet inventories by status
 * [getOrderById](docs/sdks/store/README.md#getorderbyid) - Find purchase order by ID
 * [placeOrder](docs/sdks/store/README.md#placeorder) - Place an order for a pet
 
-### [user](docs/sdks/user/README.md)
+### [User](docs/sdks/user/README.md)
 
 * [createUser](docs/sdks/user/README.md#createuser) - Create user
 * [createUsersWithArrayInput](docs/sdks/user/README.md#createuserswitharrayinput) - Creates list of users with given input array
