@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 /**
  * Access to Petstore orders
@@ -49,7 +49,7 @@ export class Store {
         );
         const url: string = utils.generateURL(baseURL, "/store/order/{orderId}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "*/*";
 
         headers[
@@ -104,7 +104,7 @@ export class Store {
             security = new operations.GetInventorySecurity(security);
         }
         const properties = utils.parseSecurityProperties(security);
-        const headers = { ...config?.headers, ...properties.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
         headers[
@@ -173,7 +173,7 @@ export class Store {
         );
         const url: string = utils.generateURL(baseURL, "/store/order/{orderId}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
         } else {
@@ -255,7 +255,7 @@ export class Store {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();

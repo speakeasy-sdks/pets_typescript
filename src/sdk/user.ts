@@ -7,7 +7,7 @@ import * as errors from "./models/errors";
 import * as operations from "./models/operations";
 import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
 /**
  * Operations about user
@@ -61,7 +61,7 @@ export class User {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         headers["Accept"] = "*/*";
 
@@ -121,7 +121,7 @@ export class User {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         headers["Accept"] = "*/*";
 
@@ -182,7 +182,7 @@ export class User {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         headers["Accept"] = "*/*";
 
@@ -240,7 +240,7 @@ export class User {
         );
         const url: string = utils.generateURL(baseURL, "/user/{username}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "*/*";
 
         headers[
@@ -293,7 +293,7 @@ export class User {
         );
         const url: string = utils.generateURL(baseURL, "/user/{username}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
         } else {
@@ -365,7 +365,7 @@ export class User {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/user/login";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (acceptHeaderOverride !== undefined) {
             headers["Accept"] = acceptHeaderOverride.toString();
@@ -431,7 +431,7 @@ export class User {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/user/logout";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers };
         headers["Accept"] = "*/*";
 
         headers[
@@ -496,7 +496,7 @@ export class User {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        const headers = { ...reqBodyHeaders, ...config?.headers };
+        const headers: RawAxiosRequestHeaders = { ...reqBodyHeaders, ...config?.headers };
         if (reqBody == null) throw new Error("request body is required");
         headers["Accept"] = "*/*";
 
