@@ -41,7 +41,6 @@ export class Pet {
      */
     async addPetJson(
         req: shared.Pet,
-        security: operations.AddPetJsonSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.AddPetJsonResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -64,10 +63,14 @@ export class Pet {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.AddPetJsonSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -114,7 +117,6 @@ export class Pet {
      */
     async addPetRaw(
         req: Uint8Array,
-        security: operations.AddPetRawSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.AddPetRawResponse> {
         const baseURL: string = utils.templateUrl(
@@ -133,10 +135,14 @@ export class Pet {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.AddPetRawSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -183,7 +189,6 @@ export class Pet {
      */
     async deletePet(
         req: operations.DeletePetRequest,
-        security: operations.DeletePetSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.DeletePetResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -196,10 +201,14 @@ export class Pet {
         );
         const url: string = utils.generateURL(baseURL, "/pet/{petId}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.DeletePetSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...utils.getHeadersFromRequest(req),
             ...config?.headers,
@@ -247,7 +256,6 @@ export class Pet {
      */
     async findPetsByStatus(
         req: operations.FindPetsByStatusRequest,
-        security: operations.FindPetsByStatusSecurity,
         config?: AxiosRequestConfig,
         acceptHeaderOverride?: FindPetsByStatusAcceptEnum
     ): Promise<operations.FindPetsByStatusResponse> {
@@ -261,10 +269,14 @@ export class Pet {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/pet/findByStatus";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.FindPetsByStatusSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (acceptHeaderOverride !== undefined) {
@@ -336,7 +348,6 @@ export class Pet {
      */
     async findPetsByTags(
         req: operations.FindPetsByTagsRequest,
-        security: operations.FindPetsByTagsSecurity,
         config?: AxiosRequestConfig,
         acceptHeaderOverride?: FindPetsByTagsAcceptEnum
     ): Promise<operations.FindPetsByTagsResponse> {
@@ -350,10 +361,14 @@ export class Pet {
         );
         const url: string = baseURL.replace(/\/$/, "") + "/pet/findByTags";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.FindPetsByTagsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         if (acceptHeaderOverride !== undefined) {
@@ -500,7 +515,6 @@ export class Pet {
      */
     async updatePetWithForm(
         req: operations.UpdatePetWithFormRequest,
-        security: operations.UpdatePetWithFormSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePetWithFormResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -523,10 +537,14 @@ export class Pet {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdatePetWithFormSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -572,7 +590,6 @@ export class Pet {
      */
     async updatePetJson(
         req: shared.Pet,
-        security: operations.UpdatePetJsonSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePetJsonResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -595,10 +612,14 @@ export class Pet {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdatePetJsonSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -645,7 +666,6 @@ export class Pet {
      */
     async updatePetRaw(
         req: Uint8Array,
-        security: operations.UpdatePetRawSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePetRawResponse> {
         const baseURL: string = utils.templateUrl(
@@ -664,10 +684,14 @@ export class Pet {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdatePetRawSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -714,7 +738,6 @@ export class Pet {
      */
     async uploadFile(
         req: operations.UploadFileRequest,
-        security: operations.UploadFileSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UploadFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -737,10 +760,14 @@ export class Pet {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UploadFileSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

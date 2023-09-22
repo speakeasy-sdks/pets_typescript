@@ -27,17 +27,21 @@ This can only be done by the logged in user.
 import { PetStore } from "PetStore";
 import { CreateUserResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.createUser({
-  email: "Leora.Fadel@gmail.com",
-  firstName: "Tyra",
-  id: 902599,
-  lastName: "Parker",
-  password: "in",
-  phone: "(649) 700-9666 x123",
-  userStatus: 128926,
-  username: "Nestor.Halvorson",
+  email: "Manuela.OHara21@hotmail.com",
+  firstName: "Florian",
+  id: 128926,
+  lastName: "Rolfson",
+  password: "enim",
+  phone: "(435) 246-9916 x2619",
+  userStatus: 653108,
+  username: "Kristina.Fritsch",
 }).then((res: CreateUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -68,18 +72,22 @@ Creates list of users with given input array
 import { PetStore } from "PetStore";
 import { CreateUsersWithArrayInputResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.createUsersWithArrayInput([
   {
-    email: "Keyon_Batz@gmail.com",
-    firstName: "Yasmeen",
-    id: 958950,
-    lastName: "Brakus",
-    password: "mollitia",
-    phone: "719.752.4442",
-    userStatus: 623510,
-    username: "Carmelo67",
+    email: "Deion33@yahoo.com",
+    firstName: "Bernie",
+    id: 674752,
+    lastName: "O'Kon",
+    password: "enim",
+    phone: "1-819-468-0068",
+    userStatus: 673660,
+    username: "Austyn_Witting46",
   },
 ]).then((res: CreateUsersWithArrayInputResponse) => {
   if (res.statusCode == 200) {
@@ -111,18 +119,22 @@ Creates list of users with given input array
 import { PetStore } from "PetStore";
 import { CreateUsersWithListInputResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.createUsersWithListInput([
   {
-    email: "Emilia.Conn94@yahoo.com",
-    firstName: "Freida",
-    id: 662527,
-    lastName: "Schuster",
-    password: "aut",
-    phone: "(686) 299-8459",
-    userStatus: 55714,
-    username: "Lelah.Klein3",
+    email: "Whitney.Bednar@yahoo.com",
+    firstName: "Myrtis",
+    id: 19987,
+    lastName: "Batz",
+    password: "reprehenderit",
+    phone: "913-441-6384 x902",
+    userStatus: 692472,
+    username: "Kennedi.Mante50",
   },
 ]).then((res: CreateUsersWithListInputResponse) => {
   if (res.statusCode == 200) {
@@ -154,10 +166,14 @@ This can only be done by the logged in user.
 import { PetStore } from "PetStore";
 import { DeleteUserResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.deleteUser({
-  username: "Iliana.Grady35",
+  username: "Judah92",
 }).then((res: DeleteUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -188,10 +204,14 @@ Get user by user name
 import { PetStore } from "PetStore";
 import { GetUserByNameResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.getUserByName({
-  username: "Elena68",
+  username: "Kira.Boehm31",
 }).then((res: GetUserByNameResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -222,11 +242,15 @@ Logs user into the system
 import { PetStore } from "PetStore";
 import { LoginUserResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.loginUser({
-  password: "enim",
-  username: "Shania.Jerde21",
+  password: "consequatur",
+  username: "Marc64",
 }).then((res: LoginUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -257,7 +281,11 @@ Logs out current logged in user session
 import { PetStore } from "PetStore";
 import { LogoutUserResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.logoutUser().then((res: LogoutUserResponse) => {
   if (res.statusCode == 200) {
@@ -288,20 +316,24 @@ This can only be done by the logged in user.
 import { PetStore } from "PetStore";
 import { UpdateUserResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.user.updateUser({
   user: {
-    email: "Kennedi.Mante50@hotmail.com",
-    firstName: "Judah",
-    id: 916723,
-    lastName: "Botsford",
-    password: "repudiandae",
-    phone: "(292) 406-8167 x8221",
-    userStatus: 397821,
-    username: "Kyler16",
+    email: "Ron18@hotmail.com",
+    firstName: "Grant",
+    id: 586513,
+    lastName: "Lueilwitz",
+    password: "perferendis",
+    phone: "1-830-365-2772",
+    userStatus: 962189,
+    username: "Horacio_Franey39",
   },
-  username: "Rhoda14",
+  username: "Laron_Tremblay",
 }).then((res: UpdateUserResponse) => {
   if (res.statusCode == 200) {
     // handle response

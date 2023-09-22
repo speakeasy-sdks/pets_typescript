@@ -18,36 +18,35 @@ yarn add https://github.com/speakeasy-sdks/pets_typescript
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { PetStore } from "PetStore";
-import { AddPetJsonResponse, AddPetJsonSecurity } from "PetStore/dist/sdk/models/operations";
+import { AddPetJsonResponse } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-const sdk = new PetStore();
-const operationSecurity: AddPetJsonSecurity = {
-  petstoreAuth: "",
-};
+const sdk = new PetStore({
+  security: {
+    petstoreAuth: "",
+  },
+});
 
 sdk.pet.addPetJson({
   category: {
-    id: 548814,
-    name: "Kelvin Sporer",
+    id: 56713,
+    name: "Ricky Hoppe",
   },
-  id: 544883,
+  id: 812169,
   name: "doggie",
   photoUrls: [
-    "illum",
+    "voluptatum",
   ],
   status: PetStatus.Pending,
   tags: [
     {
-      id: 623564,
-      name: "Rick Kertzmann",
+      id: 568045,
+      name: "Mrs. Sophie Smith MD",
     },
   ],
-}, operationSecurity).then((res: AddPetJsonResponse) => {
+}).then((res: AddPetJsonResponse) => {
   if (res.statusCode == 200) {
     // handle response
   }
@@ -90,6 +89,32 @@ sdk.pet.addPetJson({
 * [logoutUser](docs/sdks/user/README.md#logoutuser) - Logs out current logged in user session
 * [updateUser](docs/sdks/user/README.md#updateuser) - Updated user
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Pagination -->
+# Pagination
+
+Some of the endpoints in this SDK support pagination. To use pagination, you make your SDK calls as usual, but the
+returned response object will have a `next` method that can be called to pull down the next group of results. If the
+return value of `next` is `null`, then there are no more pages to be fetched.
+
+Here's an example of one such pagination call:
+
+
+<!-- End Pagination -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

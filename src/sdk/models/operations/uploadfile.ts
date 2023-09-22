@@ -6,11 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class UploadFileSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
-    petstoreAuth: string;
-}
-
 export class UploadFileRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "request, media_type=application/octet-stream" })
     requestBody?: Uint8Array;

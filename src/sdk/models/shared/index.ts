@@ -7,5 +7,6 @@ export * from "./category";
 export * from "./order";
 export * from "./pet";
 export * from "./petpetidbody";
+export * from "./security";
 export * from "./tag";
 export * from "./user";

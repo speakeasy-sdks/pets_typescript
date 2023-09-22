@@ -5,11 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
-export class DeletePetSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "security, scheme=true;type=oauth2;name=Authorization" })
-    petstoreAuth: string;
-}
-
 export class DeletePetRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "header, style=simple;explode=false;name=api_key" })
     apiKey?: string;
