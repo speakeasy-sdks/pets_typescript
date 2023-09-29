@@ -14,19 +14,19 @@ const sdk = new PetStore({
 
 sdk.pet.addPetJson({
   category: {
-    id: 548814,
-    name: "Kelvin Sporer",
+    id: 775358,
+    name: "male Convertible Strontium",
   },
-  id: 544883,
+  id: 681886,
   name: "doggie",
   photoUrls: [
-    "illum",
+    "Mobility",
   ],
   status: PetStatus.Pending,
   tags: [
     {
-      id: 623564,
-      name: "Rick Kertzmann",
+      id: 63852,
+      name: "Freeway",
     },
   ],
 }).then((res: AddPetJsonResponse) => {

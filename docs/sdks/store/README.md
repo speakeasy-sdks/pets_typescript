@@ -29,7 +29,7 @@ const sdk = new PetStore({
 });
 
 sdk.store.deleteOrder({
-  orderId: 449950,
+  orderId: 127902,
 }).then((res: DeleteOrderResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -102,7 +102,7 @@ const sdk = new PetStore({
 });
 
 sdk.store.getOrderById({
-  orderId: 359508,
+  orderId: 614993,
 }).then((res: GetOrderByIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -142,10 +142,10 @@ const sdk = new PetStore({
 
 sdk.store.placeOrder({
   complete: false,
-  id: 613064,
-  petId: 437032,
-  quantity: 902349,
-  shipDate: new Date("2022-10-20T12:36:28.767Z"),
+  id: 838011,
+  petId: 43532,
+  quantity: 849945,
+  shipDate: new Date("2021-10-09T18:54:47.174Z"),
   status: OrderStatus.Placed,
 }).then((res: PlaceOrderResponse) => {
   if (res.statusCode == 200) {

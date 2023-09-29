@@ -31,19 +31,19 @@ const sdk = new PetStore({
 
 sdk.pet.addPetJson({
   category: {
-    id: 56713,
-    name: "Ricky Hoppe",
+    id: 775358,
+    name: "male Convertible Strontium",
   },
-  id: 812169,
+  id: 681886,
   name: "doggie",
   photoUrls: [
-    "voluptatum",
+    "Mobility",
   ],
   status: PetStatus.Pending,
   tags: [
     {
-      id: 568045,
-      name: "Mrs. Sophie Smith MD",
+      id: 63852,
+      name: "Freeway",
     },
   ],
 }).then((res: AddPetJsonResponse) => {
