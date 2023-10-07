@@ -20,21 +20,22 @@ For valid response try integer IDs with positive integer value.\ \ Negative or n
 
 ```typescript
 import { PetStore } from "PetStore";
-import { DeleteOrderResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.store.deleteOrder({
-  orderId: 127902,
-}).then((res: DeleteOrderResponse) => {
+  const res = await sdk.store.deleteOrder({
+    orderId: 127902,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -58,18 +59,20 @@ Returns a map of status codes to quantities
 
 ```typescript
 import { PetStore } from "PetStore";
-import { GetInventoryResponse, GetInventorySecurity } from "PetStore/dist/sdk/models/operations";
+import { GetInventorySecurity } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+(async() => {
+  const sdk = new PetStore();
 const operationSecurity: GetInventorySecurity = {
   apiKey: "",
 };
 
-sdk.store.getInventory(operationSecurity).then((res: GetInventoryResponse) => {
+  const res = await sdk.store.getInventory(operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -93,21 +96,22 @@ For valid response try integer IDs with value >= 1 and <= 10.\ \ Other values wi
 
 ```typescript
 import { PetStore } from "PetStore";
-import { GetOrderByIdResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.store.getOrderById({
-  orderId: 614993,
-}).then((res: GetOrderByIdResponse) => {
+  const res = await sdk.store.getOrderById({
+    orderId: 614993,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -131,27 +135,21 @@ Place an order for a pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { PlaceOrderResponse } from "PetStore/dist/sdk/models/operations";
 import { OrderStatus } from "PetStore/dist/sdk/models/shared";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.store.placeOrder({
-  complete: false,
-  id: 838011,
-  petId: 43532,
-  quantity: 849945,
-  shipDate: new Date("2021-10-09T18:54:47.174Z"),
-  status: OrderStatus.Placed,
-}).then((res: PlaceOrderResponse) => {
+  const res = await sdk.store.placeOrder({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

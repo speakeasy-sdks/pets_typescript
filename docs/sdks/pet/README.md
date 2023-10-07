@@ -28,37 +28,30 @@ Add a new pet to the store
 
 ```typescript
 import { PetStore } from "PetStore";
-import { AddPetJsonResponse } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
-
-sdk.pet.addPetJson({
-  category: {
-    id: 775358,
-    name: "male Convertible Strontium",
-  },
-  id: 681886,
-  name: "doggie",
-  photoUrls: [
-    "Mobility",
-  ],
-  status: PetStatus.Pending,
-  tags: [
-    {
-      id: 63852,
-      name: "Freeway",
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
     },
-  ],
-}).then((res: AddPetJsonResponse) => {
+  });
+
+  const res = await sdk.pet.addPetJson({
+    category: {},
+    name: "doggie",
+    photoUrls: [
+      "male",
+    ],
+    tags: [
+      {},
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -82,20 +75,21 @@ Add a new pet to the store
 
 ```typescript
 import { PetStore } from "PetStore";
-import { AddPetRawResponse } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.addPetRaw("W`6wC8ntZ\" as bytes <<<>>>).then((res: AddPetRawResponse) => {
+  const res = await sdk.pet.addPetRaw("W`6wC8ntZ\" as bytes <<<>>>);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -119,22 +113,22 @@ Deletes a pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { DeletePetResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.deletePet({
-  apiKey: "Northwest female",
-  petId: 979259,
-}).then((res: DeletePetResponse) => {
+  const res = await sdk.pet.deletePet({
+    petId: 441876,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -158,23 +152,25 @@ Multiple status values can be provided with comma separated strings
 
 ```typescript
 import { PetStore } from "PetStore";
-import { FindPetsByStatusResponse, FindPetsByStatusStatus } from "PetStore/dist/sdk/models/operations";
+import { FindPetsByStatusStatus } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.findPetsByStatus({
-  status: [
-    FindPetsByStatusStatus.Sold,
-  ],
-}).then((res: FindPetsByStatusResponse) => {
+  const res = await sdk.pet.findPetsByStatus({
+    status: [
+      FindPetsByStatusStatus.Sold,
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -200,23 +196,24 @@ Muliple tags can be provided with comma separated strings. Use\ \ tag1, tag2, ta
 
 ```typescript
 import { PetStore } from "PetStore";
-import { FindPetsByTagsResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.findPetsByTags({
-  tags: [
-    "engage",
-  ],
-}).then((res: FindPetsByTagsResponse) => {
+  const res = await sdk.pet.findPetsByTags({
+    tags: [
+      "engage",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -240,20 +237,22 @@ Returns a single pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { GetPetByIdResponse, GetPetByIdSecurity } from "PetStore/dist/sdk/models/operations";
+import { GetPetByIdSecurity } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore();
+(async() => {
+  const sdk = new PetStore();
 const operationSecurity: GetPetByIdSecurity = {
   apiKey: "",
 };
 
-sdk.pet.getPetById({
-  petId: 504151,
-}, operationSecurity).then((res: GetPetByIdResponse) => {
+  const res = await sdk.pet.getPetById({
+    petId: 504151,
+  }, operationSecurity);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -278,25 +277,23 @@ Updates a pet in the store with form data
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UpdatePetWithFormResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.updatePetWithForm({
-  petId: 303241,
-  petPetIdBody: {
-    name: "including Fish",
-    status: "Pollich",
-  },
-}).then((res: UpdatePetWithFormResponse) => {
+  const res = await sdk.pet.updatePetWithForm({
+    petId: 303241,
+    petPetIdBody: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -320,37 +317,30 @@ Update an existing pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UpdatePetJsonResponse } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
-
-sdk.pet.updatePetJson({
-  category: {
-    id: 317591,
-    name: "JSON Savings",
-  },
-  id: 962051,
-  name: "doggie",
-  photoUrls: [
-    "Southeast",
-  ],
-  status: PetStatus.Available,
-  tags: [
-    {
-      id: 217658,
-      name: "Wooden Branding",
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
     },
-  ],
-}).then((res: UpdatePetJsonResponse) => {
+  });
+
+  const res = await sdk.pet.updatePetJson({
+    category: {},
+    name: "doggie",
+    photoUrls: [
+      "engage",
+    ],
+    tags: [
+      {},
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -374,20 +364,21 @@ Update an existing pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UpdatePetRawResponse } from "PetStore/dist/sdk/models/operations";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.updatePetRaw(":Pnf><u_<@" as bytes <<<>>>).then((res: UpdatePetRawResponse) => {
+  const res = await sdk.pet.updatePetRaw(":Pnf><u_<@" as bytes <<<>>>);
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -411,22 +402,23 @@ uploads an image
 
 ```typescript
 import { PetStore } from "PetStore";
-import { UploadFileResponse } from "PetStore/dist/sdk/models/operations";
 
-const sdk = new PetStore({
-  security: {
-    petstoreAuth: "",
-  },
-});
+(async() => {
+  const sdk = new PetStore({
+    security: {
+      petstoreAuth: "",
+    },
+  });
 
-sdk.pet.uploadFile({
-  requestBody: "U?WWKB{5@q" as bytes <<<>>>,
-  petId: 621158,
-}).then((res: UploadFileResponse) => {
+  const res = await sdk.pet.uploadFile({
+    requestBody: "U?WWKB{5@q" as bytes <<<>>>,
+    petId: 621158,
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
