@@ -22,28 +22,25 @@ yarn add https://github.com/speakeasy-sdks/pets_typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-(async() => {
-  const sdk = new PetStore({
-    security: {
-      petstoreAuth: "",
-    },
-  });
+(async () => {
+    const sdk = new PetStore({
+        security: {
+            petstoreAuth: "",
+        },
+    });
 
-  const res = await sdk.pet.addPetJson({
-    category: {},
-    name: "doggie",
-    photoUrls: [
-      "male",
-    ],
-    tags: [
-      {},
-    ],
-  });
+    const res = await sdk.pet.addPetJson({
+        category: {},
+        name: "doggie",
+        photoUrls: ["string"],
+        tags: [{}],
+    });
 
-  if (res.statusCode == 200) {
-    // handle response
-  }
+    if (res.statusCode == 200) {
+        // handle response
+    }
 })();
+
 ```
 <!-- End SDK Example Usage -->
 

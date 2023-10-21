@@ -41,7 +41,7 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
     category: {},
     name: "doggie",
     photoUrls: [
-      "male",
+      "string",
     ],
     tags: [
       {},
@@ -206,7 +206,7 @@ import { PetStore } from "PetStore";
 
   const res = await sdk.pet.findPetsByTags({
     tags: [
-      "engage",
+      "string",
     ],
   });
 
@@ -330,7 +330,7 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
     category: {},
     name: "doggie",
     photoUrls: [
-      "engage",
+      "string",
     ],
     tags: [
       {},
