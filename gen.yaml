@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 503ed106767e79c9b7fda78baf424494
   docVersion: 1.0.0
-  speakeasyVersion: 1.112.1
-  generationVersion: 2.173.0
+  speakeasyVersion: 1.114.1
+  generationVersion: 2.181.1
 generation:
   comments: {}
   sdkClassName: PetStore
@@ -11,15 +11,24 @@ generation:
 features:
   typescript:
     acceptHeaders: 2.81.1
-    core: 2.94.0
+    core: 3.1.0
     deprecations: 2.81.1
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
     methodSecurity: 2.82.0
 typescript:
-  version: 0.1.0
+  version: 0.2.0
   author: Test
+  clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
+  imports:
+    option: openapi
+    paths:
+      callbacks: sdk/models/callbacks
+      errors: sdk/models/errors
+      operations: sdk/models/operations
+      shared: sdk/models/shared
+      webhooks: sdk/models/webhooks
   installationURL: https://github.com/speakeasy-sdks/pets_typescript
   maxMethodParams: 0
   packageName: PetStore

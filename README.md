@@ -15,15 +15,15 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 - [ ] 🎁 Publish your SDK to package managers by [configuring automatic publishing](https://www.speakeasyapi.dev/docs/productionize-sdks/publish-sdks)
 - [ ] ✨ When ready to productionize, delete this section from the README
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
-## NPM
+### NPM
 
 ```bash
 npm add https://github.com/speakeasy-sdks/pets_typescript
 ```
 
-## Yarn
+### Yarn
 
 ```bash
 yarn add https://github.com/speakeasy-sdks/pets_typescript
@@ -32,8 +32,6 @@ yarn add https://github.com/speakeasy-sdks/pets_typescript
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
@@ -59,10 +57,10 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
-## [pet](docs/sdks/pet/README.md)
+### [.pet](docs/sdks/pet/README.md)
 
 * [addPetJson](docs/sdks/pet/README.md#addpetjson) - Add a new pet to the store
 * [addPetRaw](docs/sdks/pet/README.md#addpetraw) - Add a new pet to the store
@@ -75,14 +73,14 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 * [updatePetRaw](docs/sdks/pet/README.md#updatepetraw) - Update an existing pet
 * [uploadFile](docs/sdks/pet/README.md#uploadfile) - uploads an image
 
-## [store](docs/sdks/store/README.md)
+### [.store](docs/sdks/store/README.md)
 
 * [deleteOrder](docs/sdks/store/README.md#deleteorder) - Delete purchase order by ID
 * [getInventory](docs/sdks/store/README.md#getinventory) - Returns pet inventories by status
 * [getOrderById](docs/sdks/store/README.md#getorderbyid) - Find purchase order by ID
 * [placeOrder](docs/sdks/store/README.md#placeorder) - Place an order for a pet
 
-## [user](docs/sdks/user/README.md)
+### [.user](docs/sdks/user/README.md)
 
 * [createUser](docs/sdks/user/README.md#createuser) - Create user
 * [createUsersWithArrayInput](docs/sdks/user/README.md#createuserswitharrayinput) - Creates list of users with given input array
@@ -96,16 +94,12 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 <!-- Start Dev Containers -->
 
-
-
 <!-- End Dev Containers -->
 
 <!-- Start Error Handling -->
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
@@ -122,15 +116,14 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new PetStore({
-        petstoreAuth: "",
         serverIdx: 1,
+        petstoreAuth: "",
     });
 
     const res = await sdk.pet.addPetJson({
@@ -152,15 +145,14 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new PetStore({
-        petstoreAuth: "",
         serverURL: "https://virtserver.swaggerhub.com/apple313/Petstore-Example/1.0.0",
+        petstoreAuth: "",
     });
 
     const res = await sdk.pet.addPetJson({
@@ -197,9 +189,73 @@ const httpClient = axios.create({
 
 const sdk = new PetStore({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name           | Type           | Scheme         |
+| -------------- | -------------- | -------------- |
+| `petstoreAuth` | oauth2         | OAuth2 token   |
+
+To authenticate with the API the `petstoreAuth` parameter must be set when initializing the SDK client instance. For example:
+
+```typescript
+import { PetStore } from "PetStore";
+import { PetStatus } from "PetStore/dist/sdk/models/shared";
+
+(async () => {
+    const sdk = new PetStore({
+        petstoreAuth: "",
+    });
+
+    const res = await sdk.pet.addPetJson({
+        category: {},
+        name: "doggie",
+        photoUrls: ["string"],
+        tags: [{}],
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+
+## Per-Operation Security Schemes
+
+Some operations in your SDK require the security scheme to be specified at the request level. For example:
+
+```typescript
+import { PetStore } from "PetStore";
+import { GetPetByIdSecurity } from "PetStore/dist/sdk/models/operations";
+
+(async () => {
+    const sdk = new PetStore();
+    const operationSecurity: GetPetByIdSecurity = "";
+
+    const res = await sdk.pet.getPetById(
+        {
+            petId: 504151,
+        },
+        operationSecurity
+    );
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

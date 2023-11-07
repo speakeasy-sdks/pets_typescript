@@ -33,5 +33,5 @@ export class GetInventoryResponse extends SpeakeasyBase {
      * successful operation
      */
     @SpeakeasyMetadata()
-    getInventory200ApplicationJSONObject?: Record<string, number>;
+    object?: Record<string, number>;
 }

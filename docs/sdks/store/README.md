@@ -1,5 +1,5 @@
 # Store
-(*store*)
+(*.store*)
 
 ## Overview
 
@@ -132,7 +132,7 @@ Place an order for a pet
 
 ```typescript
 import { PetStore } from "PetStore";
-import { OrderStatus } from "PetStore/dist/sdk/models/shared";
+import { Status } from "PetStore/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new PetStore({

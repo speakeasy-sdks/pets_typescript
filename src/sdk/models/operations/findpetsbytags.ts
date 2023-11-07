@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../shared";
+import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class FindPetsByTagsRequest extends SpeakeasyBase {
@@ -15,6 +15,12 @@ export class FindPetsByTagsRequest extends SpeakeasyBase {
 }
 
 export class FindPetsByTagsResponse extends SpeakeasyBase {
+    /**
+     * successful operation
+     */
+    @SpeakeasyMetadata({ elemType: shared.Pet })
+    twoHundredApplicationJsonClasses?: shared.Pet[];
+
     @SpeakeasyMetadata()
     body?: Uint8Array;
 
@@ -23,12 +29,6 @@ export class FindPetsByTagsResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     contentType: string;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata({ elemType: shared.Pet })
-    pets?: shared.Pet[];
 
     /**
      * HTTP response status code for this operation

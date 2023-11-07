@@ -1,5 +1,5 @@
 # Pet
-(*pet*)
+(*.pet*)
 
 ## Overview
 
@@ -81,7 +81,7 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
     petstoreAuth: "",
   });
 
-  const res = await sdk.pet.addPetRaw("W`6wC8ntZ\" as bytes <<<>>>);
+  const res = await sdk.pet.addPetRaw(new TextEncoder().encode("0xcf5E85CDde"));
 
 
   if (res.statusCode == 200) {
@@ -149,7 +149,7 @@ Multiple status values can be provided with comma separated strings
 
 ```typescript
 import { PetStore } from "PetStore";
-import { FindPetsByStatusStatus } from "PetStore/dist/sdk/models/operations";
+import { Status } from "PetStore/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new PetStore({
@@ -158,7 +158,7 @@ import { FindPetsByStatusStatus } from "PetStore/dist/sdk/models/operations";
 
   const res = await sdk.pet.findPetsByStatus({
     status: [
-      FindPetsByStatusStatus.Sold,
+      Status.Sold,
     ],
   });
 
@@ -363,7 +363,7 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
     petstoreAuth: "",
   });
 
-  const res = await sdk.pet.updatePetRaw(":Pnf><u_<@" as bytes <<<>>>);
+  const res = await sdk.pet.updatePetRaw(new TextEncoder().encode("0x6bCA76De67"));
 
 
   if (res.statusCode == 200) {
@@ -400,7 +400,7 @@ import { PetStore } from "PetStore";
   });
 
   const res = await sdk.pet.uploadFile({
-    requestBody: "U?WWKB{5@q" as bytes <<<>>>,
+    requestBody: new TextEncoder().encode("0xc7cca7F47D"),
     petId: 621158,
   });
 

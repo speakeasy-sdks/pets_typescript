@@ -1,4 +1,4 @@
-# FindPetsByStatusStatus
+# Status
 
 
 ## Values

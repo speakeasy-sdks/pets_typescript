@@ -3,7 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
-import * as shared from "./models/shared";
+import * as shared from "../sdk/models/shared";
 import { Pet } from "./pet";
 import { Store } from "./store";
 import { User } from "./user";
@@ -54,9 +54,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0.0";
-    sdkVersion = "0.1.0";
-    genVersion = "2.173.0";
-    userAgent = "speakeasy-sdk/typescript 0.1.0 2.173.0 1.0.0 PetStore";
+    sdkVersion = "0.2.0";
+    genVersion = "2.181.1";
+    userAgent = "speakeasy-sdk/typescript 0.2.0 2.181.1 1.0.0 PetStore";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);

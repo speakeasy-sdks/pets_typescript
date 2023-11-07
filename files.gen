@@ -43,7 +43,6 @@ src/sdk/models/operations/getuserbyname.ts
 src/sdk/models/operations/loginuser.ts
 src/sdk/models/operations/logoutuser.ts
 src/sdk/models/operations/updateuser.ts
-src/sdk/models/operations/index.ts
 src/sdk/models/shared/pet.ts
 src/sdk/models/shared/tag.ts
 src/sdk/models/shared/category.ts
@@ -52,14 +51,15 @@ src/sdk/models/shared/apiresponse.ts
 src/sdk/models/shared/order.ts
 src/sdk/models/shared/user.ts
 src/sdk/models/shared/security.ts
-src/sdk/models/shared/index.ts
 src/sdk/models/errors/index.ts
+src/sdk/models/operations/index.ts
+src/sdk/models/shared/index.ts
 USAGE.md
 docs/models/operations/addpetjsonresponse.md
 docs/models/operations/addpetrawresponse.md
 docs/models/operations/deletepetrequest.md
 docs/models/operations/deletepetresponse.md
-docs/models/operations/findpetsbystatusstatus.md
+docs/models/operations/status.md
 docs/models/operations/findpetsbystatusrequest.md
 docs/models/operations/findpetsbystatusresponse.md
 docs/models/operations/findpetsbytagsrequest.md
@@ -98,7 +98,7 @@ docs/models/shared/tag.md
 docs/models/shared/category.md
 docs/models/shared/petpetidbody.md
 docs/models/shared/apiresponse.md
-docs/models/shared/orderstatus.md
+docs/models/shared/status.md
 docs/models/shared/order.md
 docs/models/shared/user.md
 docs/models/shared/security.md
