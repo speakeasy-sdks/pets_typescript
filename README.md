@@ -32,6 +32,8 @@ yarn add https://github.com/speakeasy-sdks/pets_typescript
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
+### Example
+
 ```typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
@@ -97,7 +99,7 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 <!-- End Dev Containers -->
 
 <!-- Start Error Handling -->
-# Error Handling
+## Error Handling
 
 Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
 
@@ -105,8 +107,7 @@ Handling errors in this SDK should largely match your expectations.  All operati
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-
-## Example
+Example
 
 ```typescript
 import { PetStore } from "PetStore";
@@ -136,9 +137,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 <!-- End Error Handling -->
 
 <!-- Start Server Selection -->
-# Server Selection
+## Server Selection
 
-## Select Server by Index
+### Select Server by Index
 
 You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
@@ -147,7 +148,7 @@ You can override the default server globally by passing a server index to the `s
 | 0 | `https://virtserver.swaggerhub.com/apple313/Petstore-Example/1.0.0` | None |
 | 1 | `https://petstore.swagger.io/v2` | None |
 
-For example:
+#### Example
 
 ```typescript
 import { PetStore } from "PetStore";
@@ -174,10 +175,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 ```
 
 
-## Override Server URL Per-Client
+### Override Server URL Per-Client
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
-
 ```typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
@@ -204,10 +204,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 <!-- End Server Selection -->
 
 <!-- Start Custom HTTP Client -->
-# Custom HTTP Client
+## Custom HTTP Client
 
 The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
-
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
@@ -219,7 +218,6 @@ const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
 })
 
-
 const sdk = new PetStore({defaultClient: httpClient});
 ```
 <!-- End Custom HTTP Client -->
@@ -227,9 +225,9 @@ const sdk = new PetStore({defaultClient: httpClient});
 
 
 <!-- Start Authentication -->
-# Authentication
+## Authentication
 
-## Per-Client Security Schemes
+### Per-Client Security Schemes
 
 This SDK supports the following security scheme globally:
 
@@ -238,7 +236,6 @@ This SDK supports the following security scheme globally:
 | `petstoreAuth` | oauth2         | OAuth2 token   |
 
 To authenticate with the API the `petstoreAuth` parameter must be set when initializing the SDK client instance. For example:
-
 ```typescript
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
@@ -262,10 +259,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
 ```
 
-## Per-Operation Security Schemes
+### Per-Operation Security Schemes
 
 Some operations in this SDK require the security scheme to be specified at the request level. For example:
-
 ```typescript
 import { PetStore } from "PetStore";
 import { GetPetByIdSecurity } from "PetStore/dist/sdk/models/operations";
