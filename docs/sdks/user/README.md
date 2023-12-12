@@ -27,9 +27,9 @@ This can only be done by the logged in user.
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.createUser({});
@@ -37,7 +37,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -66,9 +68,9 @@ Creates list of users with given input array
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.createUsersWithArrayInput([
@@ -78,7 +80,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -107,9 +111,9 @@ Creates list of users with given input array
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.createUsersWithListInput([
@@ -119,7 +123,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -148,9 +154,9 @@ This can only be done by the logged in user.
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.deleteUser({
@@ -160,7 +166,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -189,9 +197,9 @@ Get user by user name
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.getUserByName({
@@ -201,7 +209,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -230,9 +240,9 @@ Logs user into the system
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.loginUser({
@@ -243,7 +253,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -272,9 +284,9 @@ Logs out current logged in user session
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.logoutUser();
@@ -282,7 +294,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -310,9 +324,9 @@ This can only be done by the logged in user.
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.user.updateUser({
@@ -323,7 +337,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

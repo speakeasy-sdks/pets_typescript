@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 503ed106767e79c9b7fda78baf424494
   docVersion: 1.0.0
-  speakeasyVersion: 1.121.1
-  generationVersion: 2.194.1
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: PetStore
@@ -13,13 +13,13 @@ generation:
 features:
   typescript:
     acceptHeaders: 2.81.1
-    core: 3.1.4
+    core: 3.3.0
     deprecations: 2.81.1
-    globalSecurity: 2.82.0
+    globalSecurity: 2.82.1
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.0
 typescript:
-  version: 0.2.4
+  version: 0.3.0
   author: Test
   clientServerStatusCodesAsErrors: false
   flattenGlobalSecurity: true
@@ -37,3 +37,4 @@ typescript:
   outputModelSuffix: output
   packageName: PetStore
   repoSubDirectory: .
+  templateVersion: v1

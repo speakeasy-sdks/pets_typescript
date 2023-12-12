@@ -30,9 +30,9 @@ Add a new pet to the store
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.addPetJson({
@@ -49,7 +49,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -79,9 +81,9 @@ Add a new pet to the store
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.addPetRaw(new TextEncoder().encode("0xcf5E85CDde"));
@@ -89,7 +91,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -118,9 +122,9 @@ Deletes a pet
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.deletePet({
@@ -130,7 +134,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -160,9 +166,9 @@ Multiple status values can be provided with comma separated strings
 import { PetStore } from "PetStore";
 import { Status } from "PetStore/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.findPetsByStatus({
@@ -174,7 +180,9 @@ import { Status } from "PetStore/dist/sdk/models/operations";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -205,9 +213,9 @@ Muliple tags can be provided with comma separated strings. Use\ \ tag1, tag2, ta
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.findPetsByTags({
@@ -219,7 +227,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -249,9 +259,9 @@ Returns a single pet
 import { PetStore } from "PetStore";
 import { GetPetByIdSecurity } from "PetStore/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new PetStore();
-const operationSecurity: GetPetByIdSecurity = "";
+const operationSecurity: GetPetByIdSecurity = "<YOUR_API_KEY_HERE>";
 
   const res = await sdk.pet.getPetById({
     petId: 504151,
@@ -260,7 +270,9 @@ const operationSecurity: GetPetByIdSecurity = "";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -290,9 +302,9 @@ Updates a pet in the store with form data
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.updatePetWithForm({
@@ -303,7 +315,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -333,9 +347,9 @@ Update an existing pet
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.updatePetJson({
@@ -352,7 +366,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -382,9 +398,9 @@ Update an existing pet
 import { PetStore } from "PetStore";
 import { PetStatus } from "PetStore/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.updatePetRaw(new TextEncoder().encode("0x6bCA76De67"));
@@ -392,7 +408,9 @@ import { PetStatus } from "PetStore/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -421,9 +439,9 @@ uploads an image
 ```typescript
 import { PetStore } from "PetStore";
 
-(async() => {
+async function run() {
   const sdk = new PetStore({
-    petstoreAuth: "",
+    petstoreAuth: "Bearer <YOUR_ACCESS_TOKEN_HERE>",
   });
 
   const res = await sdk.pet.uploadFile({
@@ -434,7 +452,9 @@ import { PetStore } from "PetStore";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
