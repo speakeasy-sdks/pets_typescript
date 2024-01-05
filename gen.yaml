@@ -1,25 +1,10 @@
-configVersion: 1.0.0
-management:
-  docChecksum: 503ed106767e79c9b7fda78baf424494
-  docVersion: 1.0.0
-  speakeasyVersion: 1.127.0
-  generationVersion: 2.220.0
+configVersion: 2.0.0
 generation:
-  comments: {}
   sdkClassName: PetStore
-  repoURL: https://github.com/speakeasy-sdks/pets_typescript.git
   usageSnippets:
     optionalPropertyRendering: withExample
   fixes:
     nameResolutionDec2023: false
-features:
-  typescript:
-    acceptHeaders: 2.81.1
-    core: 3.3.9
-    deprecations: 2.81.1
-    globalSecurity: 2.82.2
-    globalServerURLs: 2.82.1
-    methodSecurity: 2.82.0
 typescript:
   version: 0.3.1
   author: Test
@@ -34,9 +19,7 @@ typescript:
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
   inputModelSuffix: input
-  installationURL: https://github.com/speakeasy-sdks/pets_typescript
   maxMethodParams: 0
   outputModelSuffix: output
   packageName: PetStore
-  repoSubDirectory: .
   templateVersion: v1
