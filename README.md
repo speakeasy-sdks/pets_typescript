@@ -47,7 +47,7 @@ async function run() {
     const res = await sdk.pet.addPetJson({
         category: {},
         name: "doggie",
-        photoUrls: ["string"],
+        photoUrls: ["<value>"],
         tags: [{}],
     });
 
@@ -121,7 +121,7 @@ async function run() {
         res = await sdk.pet.addPetJson({
             category: {},
             name: "doggie",
-            photoUrls: ["string"],
+            photoUrls: ["<value>"],
             tags: [{}],
         });
     } catch (err) {
@@ -168,7 +168,7 @@ async function run() {
     const res = await sdk.pet.addPetJson({
         category: {},
         name: "doggie",
-        photoUrls: ["string"],
+        photoUrls: ["<value>"],
         tags: [{}],
     });
 
@@ -198,7 +198,7 @@ async function run() {
     const res = await sdk.pet.addPetJson({
         category: {},
         name: "doggie",
-        photoUrls: ["string"],
+        photoUrls: ["<value>"],
         tags: [{}],
     });
 
@@ -257,7 +257,7 @@ async function run() {
     const res = await sdk.pet.addPetJson({
         category: {},
         name: "doggie",
-        photoUrls: ["string"],
+        photoUrls: ["<value>"],
         tags: [{}],
     });
 

@@ -11,7 +11,7 @@ async function run() {
     const res = await sdk.pet.addPetJson({
         category: {},
         name: "doggie",
-        photoUrls: ["string"],
+        photoUrls: ["<value>"],
         tags: [{}],
     });
 
