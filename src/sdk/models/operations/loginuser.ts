@@ -21,18 +21,6 @@ export class LoginUserRequest extends SpeakeasyBase {
 
 export class LoginUserResponse extends SpeakeasyBase {
     /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    twoHundredApplicationJsonRes?: string;
-
-    /**
-     * successful operation
-     */
-    @SpeakeasyMetadata()
-    twoHundredApplicationXmlRes?: string;
-
-    /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
@@ -52,4 +40,16 @@ export class LoginUserResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse: AxiosResponse;
+
+    /**
+     * successful operation
+     */
+    @SpeakeasyMetadata()
+    res?: string;
+
+    /**
+     * successful operation
+     */
+    @SpeakeasyMetadata()
+    string?: string;
 }
