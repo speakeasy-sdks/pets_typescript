@@ -3,10 +3,10 @@ id: 00846ad6-1032-4108-9084-623495ca2bf7
 management:
   docChecksum: 503ed106767e79c9b7fda78baf424494
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 0.3.4
-  configChecksum: 25da3e715ef6878ed46be80a68632264
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 0.3.5
+  configChecksum: aec1e26548feecda3f520456fb0cc908
   repoURL: https://github.com/speakeasy-sdks/pets_typescript.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/pets_typescript
@@ -15,7 +15,7 @@ features:
     acceptHeaders: 2.81.1
     core: 3.4.8
     deprecations: 2.81.1
-    globalSecurity: 2.82.4
+    globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
     methodSecurity: 2.82.0
 generatedFiles:
